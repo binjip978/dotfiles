@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "'Ubuntu mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 20,
+    "window.zoomLevel": 0,
+    "keyboard.dispatch": "keyCode",
+    "workbench.colorTheme": "Tomorrow Night Eighties",
+    "editor.minimap.enabled": false
+}
