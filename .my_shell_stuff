@@ -3,7 +3,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 export PS1="\\[\e[95m\]\W\[\e[m\]\[\e[94m\]\$(__git_ps1 ' (%s)')\[\e[m\] "
 
+EDITOR=vim
+
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
-export PATH=$PATH:/home/binjip978/.local/bin
+export PATH=$PATH:/home/binjip978/.local/bin:$GOPATH/bin
 export MYGO=$GOPATH/src/github.com/binjip978
