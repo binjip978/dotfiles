@@ -12,5 +12,3 @@ export GOPATH=$HOME/go
 
 export PATH=$PATH:/home/binjip978/.local/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
-
-export MYGO=$GOPATH/src/github.com/binjip978
