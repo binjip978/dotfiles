@@ -6,7 +6,7 @@ export PS1="\\[\e[95m\]\W\[\e[m\]\[\e[94m\]\$(__git_ps1 ' (%s)')\[\e[m\] "
 bind 'set show-all-if-ambiguous on'
 bind 'set completion-ignore-case on'
 
-EDITOR=vim
+export EDITOR=vim
 
 export GOPATH=$HOME/go
 
