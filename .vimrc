@@ -33,7 +33,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
-colorscheme base16-solarized-dark
+colorscheme base16-solarized-light
 " set background=dark
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
