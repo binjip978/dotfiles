@@ -11,6 +11,7 @@ Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/chriskempson/base16-vim'
+Plugin 'https://github.com/fatih/vim-go'
 
 call vundle#end()
 " Plugin manager end
@@ -33,7 +34,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
-colorscheme base16-solarized-dark
+colorscheme base16-eighties
 " set background=dark
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
