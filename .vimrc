@@ -41,6 +41,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " vim-go
 set completeopt-=preview
+let g:go_fmt_command = "goimports"
 
 " hardmode on
 noremap <Up> <Nop>
