@@ -12,6 +12,7 @@ Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/chriskempson/base16-vim'
 Plugin 'https://github.com/fatih/vim-go'
+Plugin 'https://github.com/rust-lang/rust.vim'
 
 call vundle#end()
 " Plugin manager end
