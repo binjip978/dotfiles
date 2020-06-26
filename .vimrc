@@ -8,7 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree'
-Plugin 'https://github.com/kien/ctrlp.vim'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/chriskempson/base16-vim'
 Plugin 'https://github.com/fatih/vim-go'
@@ -59,3 +59,6 @@ inoremap <Left>  <Nop>
 inoremap <Right> <Nop>
 inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
+
+" ctrlp ignore
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
