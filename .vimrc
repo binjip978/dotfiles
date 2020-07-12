@@ -37,9 +37,9 @@ set termguicolors
 if has('unix')
     " colorscheme base16-dracula
     " colorscheme base16-one-light
-    colorscheme base16-onedark
+    " colorscheme base16-railscasts
+    colorscheme base16-eighties
 endif
-" colorscheme base16-eighties
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
