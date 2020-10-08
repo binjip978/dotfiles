@@ -36,9 +36,10 @@ set t_Co=256
 set termguicolors
 if has('unix')
     " colorscheme base16-dracula
-    " colorscheme base16-one-light
-    " colorscheme base16-railscasts
+    " colorscheme base16-onedark
+    " colorscheme base16-solarized-dark
     colorscheme base16-eighties
+    " colorscheme base16-monokai
 endif
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -59,6 +60,8 @@ inoremap <Left>  <Nop>
 inoremap <Right> <Nop>
 inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
+let &t_ut=''
+
 
 " ctrlp ignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
