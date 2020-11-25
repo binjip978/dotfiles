@@ -7,12 +7,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
-Plugin 'https://github.com/chriskempson/base16-vim'
+Plugin 'jremmen/vim-ripgrep'
+
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/rust-lang/rust.vim'
+
+Plugin 'https://github.com/chriskempson/base16-vim'
 
 call vundle#end()
 " Plugin manager end
@@ -31,6 +35,7 @@ set incsearch
 set backspace=indent,eol,start
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
@@ -50,6 +55,8 @@ set completeopt-=preview
 let g:go_fmt_command = "goimports"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_highlight_types = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 " hardmode on
 noremap <Up> <Nop>
