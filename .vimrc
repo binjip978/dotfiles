@@ -17,6 +17,7 @@ Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/rust-lang/rust.vim'
 
 Plugin 'https://github.com/chriskempson/base16-vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 " Plugin manager end
@@ -43,8 +44,8 @@ if has('unix')
     " colorscheme base16-dracula
     " colorscheme base16-onedark
     " colorscheme base16-solarized-dark
-    colorscheme base16-eighties
-    " colorscheme base16-monokai
+    " colorscheme base16-eighties
+    colorscheme gruvbox
 endif
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
