@@ -12,6 +12,7 @@ Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/rust-lang/rust.vim'
