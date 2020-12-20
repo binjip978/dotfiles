@@ -13,9 +13,11 @@ Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
 
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/rust-lang/rust.vim'
+Plugin 'keith/swift.vim'
 
 Plugin 'https://github.com/chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
@@ -42,11 +44,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 set t_Co=256
 set termguicolors
 if has('unix')
-    " colorscheme base16-dracula
-    " colorscheme base16-onedark
-    " colorscheme base16-solarized-dark
-    " colorscheme base16-eighties
-    colorscheme gruvbox
+    colorscheme base16-gruvbox-dark-pale
 endif
 " magic for tmux vim and termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -71,6 +69,13 @@ inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
 let &t_ut=''
 
-
 " ctrlp ignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
+
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+
+if has('gui_macvim')
+    set guifont=Fira\ Code\ Retina:h16
+    autocmd! GUIEnter * set vb t_vb=
+    set macligatures
+endif
