@@ -14,13 +14,12 @@ Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'racer-rust/vim-racer'
 
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/rust-lang/rust.vim'
-Plugin 'keith/swift.vim'
 
 Plugin 'https://github.com/chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 " Plugin manager end
@@ -58,6 +57,18 @@ let g:go_info_mode='gopls'
 let g:go_highlight_types = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
+" rust
+let g:rustfmt_autosave = 1
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+    autocmd FileType rust nmap <buffer> <leader>gD <Plug>(rust-doc-tab)
+augroup END
+
 " hardmode on
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -72,10 +83,9 @@ let &t_ut=''
 " ctrlp ignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
 
-let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
-
 if has('gui_macvim')
-    set guifont=Fira\ Code\ Retina:h16
+    set guifont=Fira\ Code\ Retina:h15
     autocmd! GUIEnter * set vb t_vb=
     set macligatures
+    set guioptions=
 endif
