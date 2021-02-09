@@ -8,3 +8,10 @@ export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 source <(kubectl completion zsh)
+
+tmux_forward() {
+    tmux new-window 'forward'
+    tmux split-window -h
+    tmux split-window -v
+    tmux split-window -v
+}
