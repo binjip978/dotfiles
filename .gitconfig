@@ -7,4 +7,4 @@
 [pull]
 	ff = only
 [core]
-	excludesfile = /Users/binjip978/work/configs/.gitignoreglobal
+	excludesFile = ~/.gitignoreglobal
