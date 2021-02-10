@@ -13,5 +13,7 @@ tmux_forward() {
     tmux new-window 'forward'
     tmux split-window -h
     tmux split-window -v
+    tmux select-pane -t 0
     tmux split-window -v
+    tmux select-pane -t 0
 }
