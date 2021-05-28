@@ -1,0 +1,27 @@
+[
+	{
+		"keys": ["g", "d"], 
+		"command": "lsp_symbol_definition", 
+		"context": [
+			{ "key": "setting.lsp_active"},
+			{ "key": "setting.command_mode", "operand": true }
+		]
+	},
+	{
+		"keys": ["ctrl+o"], 
+		"command": "jump_back",
+		"context": [
+			{ "key": "setting.command_mode", "operand": true }
+		]
+	},
+	{
+		"keys": ["escape"],
+		"command": "exit_insert_mode",
+		"context": [
+			{ "key": "setting.command_mode", "operand": false },
+			{ "key": "setting.is_widget", "operand": false },
+			{ "key": "setting.vintage_ctrl_keys" }
+		]
+	}
+]
+
