@@ -1,0 +1,28 @@
+{
+	"added_words":
+	[
+		"Kubernetes",
+		"nginx",
+		"google",
+		"pprof",
+		"perf"
+	],
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).sublime-color-scheme",
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"font_face": "Fira Code Retina",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"",
+	],
+	"spell_check": false,
+	"theme": "Adaptive.sublime-theme",
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": true,
+	"vintage_ctrl_keys": true,
+	"hot_exit": false,
+}

@@ -1,0 +1,25 @@
+{
+    "clients": {
+        "gopls": {
+            "enabled": true,
+            "command": ["/Users/binjip978/go/bin/gopls"],
+            "selector": "source.go",
+            "initializationOptions": {
+                "experimentalWorkspaceModule": false
+            },
+            "env": {
+                "PATH": "/Users/binjip978/go/bin:/usr/local/go/bin"
+            },
+        },
+        "pylsp": {
+            "enabled": true,
+            "command": ["pylsp"],
+            // "command": ["/Users/mike/.virtualenvs/pylsp-virtual-env/bin/pylsp"], // example path, adjust it for your use case
+            "selector": "source.python"
+        }
+    },
+    "lsp_format_on_save": true,
+    "lsp_code_actions_on_save": {
+        "source.organizeImports": true
+    }
+}
