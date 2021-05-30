@@ -1,3 +1,4 @@
+export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 
 export GOPATH=$HOME/go
@@ -7,13 +8,5 @@ export GITHUB=$GOPATH/src/github.com
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:~/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=/usr/local/bin:$PATH
 source <(kubectl completion zsh)
-
-tmux_forward() {
-    tmux new-window 'forward'
-    tmux split-window -h
-    tmux split-window -v
-    tmux select-pane -t 0
-    tmux split-window -v
-    tmux select-pane -t 0
-}
