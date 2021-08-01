@@ -37,7 +37,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
-if has('unix')
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme base16-gruvbox-dark-pale
 endif
 
