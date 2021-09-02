@@ -39,6 +39,9 @@ set t_Co=256
 set termguicolors
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme base16-gruvbox-dark-pale
+else
+    " colorscheme base16-solarized-light
+    colorscheme base16-gruvbox-dark-pale
 endif
 
 " vim-go
