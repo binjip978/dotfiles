@@ -9,12 +9,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'https://github.com/scrooloose/nerdtree'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/chriskempson/base16-vim'
+Plugin 'https://github.com/junegunn/fzf'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 " Plugin manager end
@@ -31,7 +30,6 @@ set ignorecase
 set smartcase
 set incsearch
 set backspace=indent,eol,start
-set clipboard=unnamedplus
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
@@ -41,8 +39,6 @@ set termguicolors
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme base16-gruvbox-dark-pale
 else
-    " colorscheme base16-solarized-light
-    colorscheme base16-gruvbox-dark-pale
 endif
 
 " vim-go
@@ -70,3 +66,6 @@ let &t_ut=''
 
 " ctrlp ignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
+
+set rtp+=/usr/local/opt/fzf
+nmap <C-P> :FZF<CR>
