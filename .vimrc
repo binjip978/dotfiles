@@ -13,7 +13,9 @@ Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'https://github.com/chriskempson/base16-vim'
 Plugin 'https://github.com/junegunn/fzf'
+Plugin 'https://github.com/junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'https://github.com/morhetz/gruvbox'
 
 call vundle#end()
 " Plugin manager end
@@ -36,10 +38,11 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
-if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme base16-gruvbox-dark-pale
-else
-endif
+" if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+"     colorscheme base16-gruvbox-dark-pale
+" else
+" endif
+colorscheme gruvbox
 
 " vim-go
 set completeopt-=preview
