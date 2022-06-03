@@ -43,6 +43,7 @@ set termguicolors
 " else
 " endif
 colorscheme gruvbox
+set background=dark
 
 " vim-go
 set completeopt-=preview
