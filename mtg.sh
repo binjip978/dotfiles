@@ -9,7 +9,7 @@ defaults write com.wizards.mtga "Screenmanager Fullscreen mode" -integer $1
 
 # replace 1680 and 1050 with your full screen resolution, or any scaled resolution your display supports
 # to find the scaled resolutions, go to System Preferences --> Display
-defaults write com.wizards.mtga "Screenmanager Resolution Width" -integer 3840
-defaults write com.wizards.mtga "Screenmanager Resolution Height" -integer 2160
+# defaults write com.wizards.mtga "Screenmanager Resolution Width" -integer 3024
+# defaults write com.wizards.mtga "Screenmanager Resolution Height" -integer 1964
 
 open -a /Users/Shared/Epic\ Games/MagicTheGathering/MTGA.app
