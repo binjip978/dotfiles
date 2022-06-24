@@ -57,6 +57,9 @@ let g:go_metalinter_autosave = 1
 
 let g:NERDTreeWinSize=25
 
+au filetype go inoremap <buffer> . .<C-x><C-o>
+set completeopt=longest,menuone
+
 " hardmode on
 noremap <Up> <Nop>
 noremap <Down> <Nop>
