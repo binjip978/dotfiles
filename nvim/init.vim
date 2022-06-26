@@ -4,15 +4,14 @@ filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/chriskempson/base16-vim'
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mattn/vim-goimports'
+Plug 'https://github.com/fatih/vim-go'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 filetype plugin indent on
@@ -33,11 +32,26 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 set termguicolors
-" if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-"     colorscheme base16-gruvbox-dark-pale
-" else
-" endif
+
 colorscheme gruvbox
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    set background=dark
+else
+    set background=light
+endif
+
+" vim-go
+set completeopt-=preview
+let g:go_fmt_command = "goimports"
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_highlight_types = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'staticcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck', 'staticcheck']
+let g:go_metalinter_autosave = 1
+
+au filetype go inoremap <buffer> . .<C-x><C-o>
+set completeopt=longest,menuone
 
 " hardmode on
 noremap <Up> <Nop>
@@ -56,9 +70,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
 set rtp+=/usr/local/opt/fzf
 nmap <C-P> :FZF<CR>
 
-" let g:go_fmt_command = "goimports"
-" let g:go_gopls_enabled = 0
-
 lua <<EOF
   require'lspconfig'.gopls.setup{}
 
@@ -69,4 +80,4 @@ lua <<EOF
   }
 EOF
 
-nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gd <Plug>(coc-definition)
