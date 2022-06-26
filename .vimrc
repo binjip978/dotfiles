@@ -11,11 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/fatih/vim-go'
-Plugin 'https://github.com/chriskempson/base16-vim'
 Plugin 'https://github.com/junegunn/fzf'
 Plugin 'https://github.com/junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/morhetz/gruvbox'
+
 
 call vundle#end()
 " Plugin manager end
@@ -36,14 +36,17 @@ set backspace=indent,eol,start
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
+
 set t_Co=256
 set termguicolors
-" if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-"     colorscheme base16-gruvbox-dark-pale
-" else
-" endif
 colorscheme gruvbox
-set background=dark
+
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    set background=dark
+else
+    set background=light
+endif
+
 
 " vim-go
 set completeopt-=preview
