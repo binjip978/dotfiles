@@ -3,7 +3,7 @@
 	name = binjip978
 
 [init]
-    deafultBranch = main
+	defaultBranch = main
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
