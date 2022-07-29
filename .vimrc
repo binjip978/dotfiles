@@ -1,25 +1,19 @@
 " Plugin Manager
-" TODO: remove package manager to ~/.vim/pack/vendor/start
+call plug#begin()
+
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/fatih/vim-go'
+Plug 'https://github.com/junegunn/fzf'
+Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/sainnhe/everforest'
+
+call plug#end()
+
 set nocompatible
 filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'https://github.com/scrooloose/nerdtree'
-Plugin 'https://github.com/tpope/vim-commentary'
-Plugin 'https://github.com/fatih/vim-go'
-Plugin 'https://github.com/junegunn/fzf'
-Plugin 'https://github.com/junegunn/fzf.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'https://github.com/morhetz/gruvbox'
-
-
-call vundle#end()
-" Plugin manager end
-
 filetype plugin indent on
 syntax enable
 
@@ -36,8 +30,6 @@ set backspace=indent,eol,start
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-
-set t_Co=256
 set termguicolors
 colorscheme gruvbox
 
@@ -46,7 +38,6 @@ if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
 else
     set background=light
 endif
-
 
 " vim-go
 set completeopt-=preview
