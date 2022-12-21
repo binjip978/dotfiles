@@ -29,6 +29,7 @@ set ignorecase
 set smartcase
 set incsearch
 set backspace=indent,eol,start
+set wildmenu
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
@@ -39,7 +40,7 @@ if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme nord
     set background=dark
 else
-    colorscheme solarized8
+    colorscheme nord
     set background=light
 endif
 
