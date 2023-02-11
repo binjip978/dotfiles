@@ -1,6 +1,6 @@
 [user]
 	email = pdp.eleven11@gmail.com
-	name = binjip978
+	name = Siarhiej Siemianczuk
 
 [init]
 	defaultBranch = main
@@ -11,3 +11,5 @@
 	ff = only
 [core]
 	excludesFile = ~/.gitignoreglobal
+[commit]
+	gpgsign = true
