@@ -35,13 +35,13 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set termguicolors
+colorscheme nord
+
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme gruvbox
     set background=dark
 else
-    colorscheme solarized8
-    set background=light
+    set background=dark
 endif
 
 " vim-go
