@@ -10,8 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'https://github.com/fatih/vim-go'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 filetype plugin indent on
@@ -40,16 +38,6 @@ else
     set background=light
 endif
 
-" vim-go
-set completeopt-=preview
-let g:go_fmt_command = "goimports"
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_highlight_types = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'staticcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck', 'staticcheck']
-let g:go_metalinter_autosave = 1
-
 au filetype go inoremap <buffer> . .<C-x><C-o>
 set completeopt=longest,menuone
 
@@ -70,8 +58,48 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
 set rtp+=/usr/local/opt/fzf
 nmap <C-P> :FZF<CR>
 
+
+nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
+autocmd BufWritePre *.go lua vim.lsp.buf.format()
+
 lua <<EOF
-  require'lspconfig'.gopls.setup{}
+
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.go',
+    callback = function()
+      vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end
+  })
+
+end
+    require'lspconfig'.gopls.setup{
+      on_attach = on_attach,
+      flags = lsp_flags,
+      capabilities = capabilities,
+      settings = {
+        gopls = {
+          experimentalPostfixCompletions = true,
+          analyses = {
+            unusedparams = true,
+            shadow = true,
+          },
+          staticcheck = true,
+        },
+      },
+      init_options = {
+        usePlaceholders = true,
+      }
+    }
 
   require'nvim-treesitter.configs'.setup {
     highlight = {
@@ -79,5 +107,3 @@ lua <<EOF
     },
   }
 EOF
-
-"nmap <silent> gd <Plug>(coc-definition)
