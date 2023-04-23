@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 
 " colorschemes
 Plug 'https://github.com/morhetz/gruvbox'
-Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/arcticicestudio/nord-vim'
 
 call plug#end()
@@ -36,10 +35,10 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set termguicolors
 colorscheme gruvbox
+set background=dark
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     set background=dark
-
 else
     set background=light
 endif

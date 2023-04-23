@@ -8,6 +8,7 @@ Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/p00f/alabaster.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
@@ -36,6 +37,7 @@ if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     set background=dark
 else
     set background=light
+    colorscheme alabaster
 endif
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
