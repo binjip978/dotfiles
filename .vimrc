@@ -33,8 +33,8 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-set termguicolors
-colorscheme gruvbox
+" set termguicolors
+colorscheme nord
 set background=dark
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
