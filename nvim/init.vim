@@ -9,8 +9,10 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/p00f/alabaster.nvim'
+Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'github/copilot.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -32,12 +34,12 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 set t_Co=256
 set termguicolors
 
-colorscheme gruvbox
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    colorscheme nord
     set background=dark
 else
     set background=light
-    colorscheme alabaster
+    colorscheme gruvbox
 endif
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
