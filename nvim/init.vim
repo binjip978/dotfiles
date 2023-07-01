@@ -72,7 +72,13 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  vim.diagnostic.config({ signs = false })
+  vim.diagnostic.config({
+    signs = false;
+    virtual_text = true;
+  })
+
+  vim.o.updatetime = 750
+  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
