@@ -83,7 +83,7 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 
   vim.api.nvim_create_autocmd('BufWritePre', {
