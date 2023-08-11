@@ -25,7 +25,7 @@
 	},
 	{ "keys": ["ctrl+p"], "command": "auto_complete" },
     {
-        "command": "lsp_symbol_references",
+        "command": "lsp_symbol_implementation",
         "keys": ["g", "D"],
         "context": [
             {
@@ -36,4 +36,3 @@
         ]
     },
 ]
-
