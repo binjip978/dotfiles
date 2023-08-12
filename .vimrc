@@ -35,7 +35,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme nord
+    colorscheme gruvbox
     set background=dark
 else
     set termguicolors
