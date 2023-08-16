@@ -1,11 +1,17 @@
 {
     "lsp_format_on_save": true,
     "lsp_code_actions_on_save": {
-        "source.organizeImports": true,
+        "source.organizeImports": true
     },
     "enabled": true,
     "command": ["/Users/binjip978/go/bin/gopls"],
     "settings": {
         "gopls.staticcheck": true,
+        "gopls.analyses": {
+            "fieldalignment": true,
+            "nilness": true,
+            "unusedwrite": true,
+            "shadow": true
+        }
     }
 }
