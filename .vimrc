@@ -7,7 +7,7 @@ Plug 'https://github.com/fatih/vim-go'
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 " colorschemes
 Plug 'https://github.com/morhetz/gruvbox'
@@ -56,6 +56,7 @@ let g:NERDTreeWinSize=25
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
 set completeopt=longest,menuone
+set spell spelllang=en_gb
 
 " hardmode on
 noremap <Up> <Nop>

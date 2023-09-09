@@ -35,7 +35,7 @@ set t_Co=256
 set termguicolors
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme nord
+    colorscheme gruvbox
     set background=dark
 else
     set background=light
@@ -43,6 +43,7 @@ else
 endif
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
+au filetype rust inoremap <buffer> . .<C-x><C-o>
 set completeopt=longest,menuone
 
 " hardmode on
@@ -73,9 +74,11 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   vim.diagnostic.config({
-    signs = false;
-    virtual_text = true;
+    signs = true;
+    underline = true;
   })
+
+  vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
 
   vim.o.updatetime = 750
   vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
@@ -104,6 +107,8 @@ end
           analyses = {
             unusedparams = true,
             shadow = true,
+            fieldalignment = true,
+            unusedwrite = true
           },
           staticcheck = true,
         },
