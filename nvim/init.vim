@@ -35,7 +35,7 @@ set t_Co=256
 set termguicolors
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme gruvbox
+    colorscheme nord
     set background=dark
 else
     set background=light
