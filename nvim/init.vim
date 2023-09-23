@@ -38,8 +38,8 @@ if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme nord
     set background=dark
 else
-    set background=light
     colorscheme gruvbox
+    set background=light
 endif
 
 au filetype go inoremap <buffer> . .<C-x><C-o>

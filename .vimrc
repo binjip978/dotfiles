@@ -34,13 +34,12 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
+colorscheme nord
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme gruvbox
     set background=dark
 else
     set termguicolors
-    colorscheme gruvbox
     set background=light
 endif
 
@@ -56,7 +55,7 @@ let g:NERDTreeWinSize=25
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
 set completeopt=longest,menuone
-set spell spelllang=en_gb
+" set spell spelllang=en_gb
 
 " hardmode on
 noremap <Up> <Nop>
