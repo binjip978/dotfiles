@@ -39,7 +39,7 @@ colorscheme nord
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     set background=dark
 else
-    set termguicolors
+    " set termguicolors
     set background=light
 endif
 

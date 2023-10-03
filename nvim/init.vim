@@ -32,7 +32,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
-set termguicolors
+" set termguicolors
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     colorscheme nord
@@ -133,5 +133,15 @@ end
       on_attach = on_attach,
       flags = lsp_flags,
       capabilities = capabilities,
+      diagnostics = {
+          enable = true,
+      },
+      settings = {
+          cargo = {
+            features = "all",
+            loadOutDirsFromCheck = true,
+          },
+      },
   }
+
 EOF
