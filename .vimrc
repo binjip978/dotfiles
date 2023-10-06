@@ -34,7 +34,7 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-colorscheme nord
+colorscheme gruvbox
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     set background=dark

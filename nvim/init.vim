@@ -33,12 +33,11 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set t_Co=256
 " set termguicolors
+colorscheme gruvbox
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme nord
     set background=dark
 else
-    colorscheme gruvbox
     set background=light
 endif
 
@@ -70,78 +69,79 @@ autocmd BufWritePre *.go lua vim.lsp.buf.format()
 lua <<EOF
 
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  vim.diagnostic.config({
-    signs = true;
-    underline = true;
-  })
+    vim.diagnostic.config({
+        signs = true;
+        underline = true;
+    })
 
-  vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+    vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
 
-  vim.o.updatetime = 750
-  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+    vim.o.updatetime = 750
+    vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = '*.go',
-    callback = function()
-      vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-    end
-  })
-
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.go',
+        callback = function()
+            vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+        end
+    })
 end
-    require'lspconfig'.gopls.setup{
-      on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities,
-      settings = {
-        gopls = {
-          experimentalPostfixCompletions = true,
-          analyses = {
-            unusedparams = true,
-            shadow = true,
-            fieldalignment = true,
-            unusedwrite = true
-          },
-          staticcheck = true,
-        },
-      },
-      init_options = {
-        usePlaceholders = true,
-      }
-    }
 
-  require'nvim-treesitter.configs'.setup {
+require'lspconfig'.gopls.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+                fieldalignment = true,
+                unusedwrite = true
+            },
+            staticcheck = true,
+        },
+    },
+    init_options = {
+        usePlaceholders = true,
+    }
+}
+
+require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true
     },
-  }
+}
 
-  require'lspconfig'.pyright.setup{
-      on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities,
-  }
-  require'lspconfig'.rust_analyzer.setup{
-      on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities,
-      diagnostics = {
-          enable = true,
-      },
-      settings = {
-          cargo = {
+require'lspconfig'.pyright.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+require'lspconfig'.rust_analyzer.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    diagnostics = {
+       enable = true,
+    },
+    settings = {
+        cargo = {
             features = "all",
             loadOutDirsFromCheck = true,
-          },
-      },
-  }
+        },
+    },
+}
 
 EOF
