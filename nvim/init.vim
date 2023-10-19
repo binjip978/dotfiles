@@ -32,12 +32,12 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set termguicolors
+colorscheme nord
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme nord
     set background=dark
 else
-    colorscheme gruvbox
+    " colorscheme gruvbox
     set background=light
 endif
 
@@ -65,6 +65,7 @@ nmap <C-P> :FZF<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 autocmd BufWritePre *.go lua vim.lsp.buf.format()
+autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 
 lua <<EOF
 
