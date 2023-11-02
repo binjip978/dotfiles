@@ -56,12 +56,8 @@ inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
 let &t_ut=''
 
-" ctrlp ignore
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
-
 set rtp+=/usr/local/opt/fzf
-nmap <C-P> :FZF<CR>
-
+nmap <C-P> :GFiles<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 autocmd BufWritePre *.go lua vim.lsp.buf.format()
