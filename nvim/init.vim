@@ -57,7 +57,7 @@ inoremap <Down>  <Nop>
 let &t_ut=''
 
 set rtp+=/usr/local/opt/fzf
-nmap <C-P> :GFiles<CR>
+nmap <C-P> :FZF<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 autocmd BufWritePre *.go lua vim.lsp.buf.format()
