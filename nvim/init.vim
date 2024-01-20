@@ -31,7 +31,7 @@ set backspace=indent,eol,start
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-set termguicolors
+" set termguicolors
 colorscheme nord
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
