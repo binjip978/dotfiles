@@ -7,11 +7,10 @@ Plug 'https://github.com/fatih/vim-go'
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'github/copilot.vim'
 
 " colorschemes
-Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/lifepillar/vim-gruvbox8'
 
 call plug#end()
 
@@ -34,12 +33,11 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-colorscheme nord
+colorscheme gruvbox8
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
     set background=dark
 else
-    " set termguicolors
     set background=light
 endif
 
