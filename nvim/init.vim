@@ -14,6 +14,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'github/copilot.vim'
 Plug 'sago35/tinygo.vim'
+Plug 'https://github.com/folke/trouble.nvim'
 call plug#end()
 
 filetype plugin indent on
@@ -71,7 +72,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     vim.diagnostic.config({
-        signs = true;
+        signs = false;
         underline = true;
     })
 
@@ -119,6 +120,10 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true
     },
+}
+
+require'trouble'.setup {
+    icons = false
 }
 
 require'lspconfig'.pyright.setup{
