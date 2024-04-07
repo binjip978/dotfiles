@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 
 " colorschemes
 Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'https://github.com/lifepillar/vim-gruvbox8'
 
 call plug#end()
 
@@ -33,9 +32,8 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-colorscheme gruvbox8
-
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    colorscheme nord
     set background=dark
 else
     set background=light

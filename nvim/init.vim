@@ -13,6 +13,7 @@ Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'github/copilot.vim'
+Plug 'sago35/tinygo.vim'
 call plug#end()
 
 filetype plugin indent on
