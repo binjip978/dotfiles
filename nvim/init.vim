@@ -7,12 +7,10 @@ Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/p00f/alabaster.nvim'
 Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'github/copilot.vim'
 Plug 'sago35/tinygo.vim'
 Plug 'https://github.com/folke/trouble.nvim'
 call plug#end()
