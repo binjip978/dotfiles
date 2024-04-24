@@ -130,6 +130,13 @@ require'lspconfig'.pyright.setup{
     capabilities = capabilities,
 }
 
+require'lspconfig'.zls.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    cmd = { "/opt/homebrew/bin/zls" },
+}
+
 require'lspconfig'.rust_analyzer.setup{
     on_attach = on_attach,
     flags = lsp_flags,
