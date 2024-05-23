@@ -1,3 +1,11 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
 {
   "features": {
     "copilot": false
@@ -40,6 +48,18 @@
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
   }
 }
-
