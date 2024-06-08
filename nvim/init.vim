@@ -4,8 +4,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/junegunn/fzf'
-Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'https://github.com/p00f/alabaster.nvim'
@@ -14,6 +12,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sago35/tinygo.vim'
 Plug 'https://github.com/folke/trouble.nvim'
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 call plug#end()
 
 filetype plugin indent on
@@ -58,8 +58,9 @@ inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
 let &t_ut=''
 
-set rtp+=/usr/local/opt/fzf
-nmap <C-P> :FZF<CR>
+" set rtp+=/usr/local/opt/fzf
+nmap <C-P> <cmd>Telescope find_files<CR>
+nmap <C-[> <cmd>Telescope lsp_document_symbols<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 autocmd BufWritePre *.go lua vim.lsp.buf.format()
