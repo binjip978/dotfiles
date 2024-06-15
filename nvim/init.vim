@@ -58,9 +58,8 @@ inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
 let &t_ut=''
 
-" set rtp+=/usr/local/opt/fzf
 nmap <C-P> <cmd>Telescope find_files<CR>
-nmap <C-[> <cmd>Telescope lsp_document_symbols<CR>
+nmap <C-x><C-p> <cmd>Telescope lsp_document_symbols<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
 autocmd BufWritePre *.go lua vim.lsp.buf.format()
