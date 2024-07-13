@@ -29,7 +29,7 @@
           "parameterNames": true,
           "rangeVariableTypes": true
         },
-        "staticcheck": "true"
+        "staticcheck": true
       }
     }
   },
