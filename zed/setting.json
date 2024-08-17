@@ -61,5 +61,9 @@
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
-  }
+  },
+  "gutter": {
+    "line_numbers": false
+  },
+  "use_autoclose": false
 }
