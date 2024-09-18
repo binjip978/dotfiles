@@ -123,7 +123,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'trouble'.setup {
-    icons = false
+--     icons = false
 }
 
 require'lspconfig'.pyright.setup{
