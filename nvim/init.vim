@@ -8,6 +8,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'https://github.com/p00f/alabaster.nvim'
 Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sago35/tinygo.vim'
@@ -36,7 +37,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 set termguicolors
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme nord
+    colorscheme catppuccin-macchiato
     set background=dark
 else
     colorscheme alabaster
