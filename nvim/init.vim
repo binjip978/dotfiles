@@ -6,15 +6,15 @@ Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'https://github.com/p00f/alabaster.nvim'
-Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sago35/tinygo.vim'
 Plug 'https://github.com/folke/trouble.nvim'
 Plug 'https://github.com/nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+
+Plug 'https://github.com/p00f/alabaster.nvim'
+Plug 'https://github.com/arcticicestudio/nord-vim'
 call plug#end()
 
 filetype plugin indent on
@@ -37,7 +37,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 set termguicolors
 
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    colorscheme catppuccin-macchiato
+    colorscheme nord
     set background=dark
 else
     colorscheme alabaster
@@ -67,6 +67,8 @@ autocmd BufWritePre *.go lua vim.lsp.buf.format()
 autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 
 lua <<EOF
+
+vim.cmd([[highlight WinSeparator guifg=#444444]])
 
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
