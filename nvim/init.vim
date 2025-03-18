@@ -108,7 +108,6 @@ require'lspconfig'.gopls.setup{
             analyses = {
                 unusedparams = true,
                 shadow = true,
-                fieldalignment = true,
                 unusedwrite = true
             },
             staticcheck = true,
