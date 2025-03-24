@@ -91,10 +91,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 
     vim.api.nvim_create_autocmd('BufWritePre', {
-        pattern = '*.go',
-        callback = function()
-            vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-        end
+      pattern = '*.go',
+      callback = function()
+            pcall(function()
+                vim.lsp.buf.code_action { context = { only = { 'source.organizeImports' }, diagnostics = {} }, apply = true }
+                vim.lsp.buf.format()
+            end)
+        end,
     })
 end
 
