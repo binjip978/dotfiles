@@ -45,7 +45,6 @@ else
 endif
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
-au filetype rust inoremap <buffer> . .<C-x><C-o>
 set completeopt=longest,menuone
 
 " hardmode on
@@ -63,17 +62,12 @@ nmap <C-P> <cmd>Telescope find_files<CR>
 nmap <C-x><C-p> <cmd>Telescope lsp_document_symbols<CR>
 
 nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
-autocmd BufWritePre *.go lua vim.lsp.buf.format()
-autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 
 lua <<EOF
 
 vim.cmd([[highlight WinSeparator guifg=#444444]])
 
 local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
     vim.diagnostic.config({
         signs = false;
         underline = true;
@@ -129,34 +123,6 @@ require'nvim-treesitter.configs'.setup {
 
 require'trouble'.setup {
 --     icons = false
-}
-
-require'lspconfig'.pyright.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require'lspconfig'.zls.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    cmd = { "/opt/homebrew/bin/zls" },
-}
-
-require'lspconfig'.rust_analyzer.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    diagnostics = {
-       enable = true,
-    },
-    settings = {
-        cargo = {
-            features = "all",
-            loadOutDirsFromCheck = true,
-        },
-    },
 }
 
 EOF
