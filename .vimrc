@@ -3,13 +3,13 @@ call plug#begin()
 
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/fatih/vim-go'
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
 " colorschemes
 Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/agudulin/vim-colors-alabaster'
 
 call plug#end()
 
@@ -39,18 +39,8 @@ else
     set background=light
 endif
 
-" vim-go
-set completeopt-=preview
-let g:go_fmt_command = "goimports"
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_highlight_types = 1
-let g:go_metalinter_autosave = 1
-
 let g:NERDTreeWinSize=25
 
-au filetype go inoremap <buffer> . .<C-x><C-o>
-set completeopt=longest,menuone
 " set spell spelllang=en_gb
 
 " hardmode on
