@@ -1,8 +1,0 @@
-[
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "g D": "editor::GoToImplementation"
-    }
-  }
-]

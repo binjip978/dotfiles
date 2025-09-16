@@ -3,3 +3,4 @@ font-size = 18
 theme = dark:nord,light:alabaster
 keybind = cmd+e=new_split:down
 keybind = cmd+f=toggle_split_zoom
+shell-integration-features = ssh-env
