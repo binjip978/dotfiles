@@ -8,7 +8,7 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
 " colorschemes
-Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/binjip978/nord-ghostty'
 Plug 'https://github.com/agudulin/vim-colors-alabaster'
 
 call plug#end()
